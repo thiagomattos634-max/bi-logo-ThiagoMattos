@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PGRS Uberlândia | Elaboração e Diagnóstico com Biólogo CRBio-04</title>
+<meta name="description" content="Elaboração de PGRS (Plano de Gerenciamento de Resíduos Sólidos) para grandes geradores em Uberlândia-MG. Diagnóstico técnico com Biólogo CRBio-04, PGRS ágil e eficaz. Agende sua visita.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231F4D2E'/%3E%3Cpath d='M9 22c0-8 5-13 13-13-1 8-6 13-13 13Z' fill='%23F6E4D8'/%3E%3Cpath d='M9 22c3-3 6-6 13-13' stroke='%23163A22' stroke-width='1.4' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde: #1F4D2E;
+    --verde-escuro: #163A22;
+    --terracota: #B4622E;
+    --terracota-claro: #F6E4D8;
+    --areia: #F4F1E9;
+    --texto: #1B1B18;
+    --texto-sec: #6B6659;
+    --branco: #FFFFFF;
+    --borda: rgba(27,27,24,0.10);
+    --sombra: 0 12px 30px rgba(22,58,34,0.10);
+    --radius: 16px;
+    --font-titulo: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-corpo: 'Inter', 'Segoe UI', sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;}
+  body{
+    margin:0;
+    font-family:var(--font-corpo);
+    color:var(--texto);
+    background:var(--areia);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:var(--font-titulo);
+    line-height:1.15;
+    margin:0 0 .6em;
+    color:var(--verde-escuro);
+  }
+  p{margin:0 0 1em;}
+  .container{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+  section{padding:64px 0;}
+  .section-tag{
+    display:inline-block;
+    font-family:var(--font-corpo);
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--terracota);
+    background:var(--terracota-claro);
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:14px;
+  }
+  .section-heading{
+    max-width:640px;
+    margin-bottom:36px;
+  }
+  .section-heading h2{font-size:clamp(1.5rem,1.1rem + 1.5vw,2.1rem);}
+  .section-heading p{color:var(--texto-sec);font-size:1.02rem;}
+
+  /* ---------- Botões ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:var(--font-corpo);
+    font-weight:600;
+    font-size:.98rem;
+    text-decoration:none;
+    border-radius:12px;
+    padding:14px 26px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:active{transform:scale(.98);}
+  .btn-primary{
+    background:var(--terracota);
+    color:var(--branco);
+    box-shadow:0 10px 24px rgba(180,98,46,.32);
+  }
+  .btn-primary:hover{background:#9c5327;}
+  .btn-lg{padding:18px 34px;font-size:1.08rem;}
+  .btn-outline{
+    background:transparent;
+    color:var(--verde-escuro);
+    border-color:var(--verde-escuro);
+  }
+  .btn-outline:hover{background:var(--verde-escuro);color:var(--branco);}
+  .btn-block{width:100%;}
+
+  /* ---------- Navegação ---------- */
+  .site-nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(244,241,233,.85);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  .site-nav.is-scrolled{
+    border-bottom-color:var(--borda);
+    box-shadow:0 4px 20px rgba(22,58,34,.08);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 20px;
+  }
+  .nav-logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-titulo);
+    font-weight:600;
+    font-size:1.02rem;
+    color:var(--verde-escuro);
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .nav-logo svg{width:24px;height:24px;flex-shrink:0;stroke:var(--verde);}
+  .nav-logo .nav-logo-sec{color:var(--texto-sec);font-weight:400;font-size:.82rem;}
+  .nav-links{
+    display:none;
+    align-items:center;
+    gap:26px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .nav-links a{
+    font-size:.88rem;
+    font-weight:500;
+    color:var(--texto-sec);
+    text-decoration:none;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover{color:var(--verde-escuro);}
+  .nav-cta{flex-shrink:0;padding:10px 18px;font-size:.85rem;white-space:nowrap;}
+  @media(min-width:940px){
+    .nav-links{display:flex;}
+  }
+
+  /* ---------- Botão flutuante WhatsApp ---------- */
+  .whatsapp-float{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:60;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:var(--verde);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 24px rgba(22,58,34,.35);
+    text-decoration:none;
+  }
+  .whatsapp-float svg{width:28px;height:28px;fill:var(--branco);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:48px 0 96px;
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(180,98,46,.12), transparent 60%),
+      radial-gradient(700px 500px at -5% 90%, rgba(31,77,46,.10), transparent 60%),
+      linear-gradient(180deg, #EAE6D8 0%, var(--areia) 55%);
+  }
+  .hero .container{max-width:1120px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:44px;
+    align-items:center;
+    text-align:center;
+  }
+  @media(min-width:960px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;text-align:left;}
+  }
+  .hero-eyebrow{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--verde);
+    background:rgba(31,77,46,.09);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(1.7rem,1.2rem + 2.2vw,2.75rem);}
+  .hero .subtitle{
+    font-size:1.05rem;
+    color:var(--texto-sec);
+    max-width:640px;
+    margin:0 auto 28px;
+  }
+  @media(min-width:960px){
+    .hero .subtitle{margin:0 0 28px;}
+  }
+  .hero-ctas{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:26px;}
+  @media(min-width:960px){.hero-ctas{align-items:flex-start;}}
+  .hero-secondary-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+  @media(min-width:960px){.hero-secondary-nav{justify-content:flex-start;}}
+  .hero-secondary-nav .btn{padding:11px 20px;font-size:.92rem;}
+  .hero-deadline{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--branco);
+    border:1px solid var(--borda);
+    border-radius:999px;
+    padding:10px 20px;
+    margin:30px auto 0;
+    font-weight:600;
+    font-size:.92rem;
+    color:var(--verde-escuro);
+    box-shadow:var(--sombra);
+  }
+  @media(min-width:960px){.hero-deadline{margin:30px 0 0;}}
+  .hero-deadline svg{width:18px;height:18px;flex-shrink:0;stroke:var(--terracota);}
+
+  .badges-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:26px;
+  }
+  @media(min-width:960px){.badges-row{justify-content:flex-start;}}
+  .badge-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--branco);
+    border:1px solid var(--borda);
+    border-radius:999px;
+    padding:8px 16px;
+    font-size:.82rem;
+    font-weight:600;
+    color:var(--verde-escuro);
+  }
+  .badge-pill svg{width:15px;height:15px;stroke:var(--terracota);}
+
+  /* ---------- Hero: imagem e selo flutuante ---------- */
+  .hero-media{position:relative;max-width:380px;margin:0 auto;}
+  @media(min-width:960px){.hero-media{max-width:none;margin:0;}}
+  .hero-media-card{
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(22,58,34,.18);
+    border:6px solid var(--branco);
+  }
+  .hero-media-card .foto-placeholder{aspect-ratio:4/5;border-radius:18px;}
+  .hero-media-card img{
+    display:block;
+    width:100%;
+    aspect-ratio:1280/960;
+    object-fit:cover;
+    border-radius:18px;
+  }
+  .hero-floating-badge{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--verde-escuro);
+    color:var(--branco);
+    border-radius:16px;
+    padding:16px 20px;
+    box-shadow:0 16px 32px rgba(22,58,34,.28);
+    margin:-30px auto 0;
+    max-width:260px;
+    text-align:left;
+  }
+  @media(min-width:960px){
+    .hero-floating-badge{position:absolute;left:-24px;bottom:-22px;margin:0;max-width:220px;}
+  }
+  .hero-floating-badge .num{
+    font-family:var(--font-titulo);
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--terracota-claro);
+    line-height:1;
+    flex-shrink:0;
+  }
+  .hero-floating-badge .lbl{font-size:.78rem;color:rgba(255,255,255,.8);}
+
+  /* ---------- Faixa de números ---------- */
+  .stats-strip{padding:0;}
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:8px;
+    background:var(--branco);
+    border-radius:20px;
+    padding:30px 20px;
+    box-shadow:0 20px 50px rgba(22,58,34,.12);
+    margin-top:-56px;
+    position:relative;
+  }
+  .stat-item{text-align:center;padding:10px 16px;border-right:1px solid var(--borda);}
+  .stat-item:last-child{border-right:none;}
+  @media(max-width:640px){
+    .stat-item{border-right:none;border-bottom:1px solid var(--borda);padding:16px;}
+    .stat-item:last-child{border-bottom:none;}
+  }
+  .stat-num{display:block;font-family:var(--font-titulo);font-size:2.1rem;font-weight:700;color:var(--verde-escuro);}
+  .stat-lbl{font-size:.84rem;color:var(--texto-sec);}
+
+  /* ---------- Risco ---------- */
+  .risco{background:var(--verde-escuro);color:var(--branco);}
+  .risco .section-heading h2{color:var(--branco);}
+  .risco .section-heading p{color:rgba(255,255,255,.72);}
+  .risco .section-tag{background:rgba(246,228,216,.16);color:#F6C9A6;}
+  .risco-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    margin-bottom:28px;
+  }
+  .risco-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .risco-card svg{width:26px;height:26px;stroke:var(--terracota);margin-bottom:12px;}
+  .risco-card h3{color:var(--branco);font-size:1.02rem;margin-bottom:8px;}
+  .risco-card p{color:rgba(255,255,255,.72);font-size:.92rem;margin:0;}
+  .risco-urgencia{
+    background:var(--terracota);
+    border-radius:var(--radius);
+    padding:20px 24px;
+    font-weight:600;
+    font-size:1rem;
+  }
+
+  /* ---------- Como funciona ---------- */
+  .passos{
+    display:grid;
+    grid-template-columns:1fr;
+    border-top:1px solid var(--borda);
+  }
+  @media(min-width:800px){
+    .passos{grid-template-columns:repeat(4,1fr);border-top:none;border-bottom:1px solid var(--borda);}
+  }
+  .passo{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    padding:26px 4px;
+    border-bottom:1px solid var(--borda);
+  }
+  @media(min-width:800px){
+    .passo{
+      flex-direction:column;
+      gap:16px;
+      border-bottom:none;
+      border-right:1px solid var(--borda);
+      padding:6px 24px 6px 4px;
+    }
+    .passo:last-child{border-right:none;}
+  }
+  .passo-num{
+    font-family:var(--font-titulo);
+    font-weight:700;
+    font-size:2.3rem;
+    line-height:1;
+    color:var(--terracota-claro);
+    -webkit-text-stroke:1.4px var(--terracota);
+    flex-shrink:0;
+    min-width:52px;
+  }
+  .passo h3{font-size:1.02rem;margin-bottom:8px;}
+  .passo p{color:var(--texto-sec);font-size:.92rem;margin:0;}
+
+  /* ---------- Sobre ---------- */
+  .sobre-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+    align-items:start;
+  }
+  @media(min-width:820px){
+    .sobre-grid{grid-template-columns:300px 1fr;}
+  }
+  .foto-card{
+    background:var(--branco);
+    border:6px solid var(--branco);
+    border-radius:var(--radius);
+    box-shadow:var(--sombra);
+    overflow:hidden;
+  }
+  .foto-placeholder{
+    aspect-ratio:4/5;
+    background:
+      repeating-linear-gradient(45deg, var(--terracota-claro), var(--terracota-claro) 10px, #efd9c8 10px, #efd9c8 20px);
+    border:2px dashed var(--terracota);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    gap:8px;
+  }
+  .foto-placeholder svg{width:34px;height:34px;stroke:var(--terracota);}
+  .pendente-tag{
+    display:inline-block;
+    background:var(--terracota);
+    color:var(--branco);
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:999px;
+  }
+  .foto-placeholder p{margin:0;font-size:.82rem;color:var(--verde-escuro);font-weight:600;}
+  .foto-card img{
+    display:block;
+    width:100%;
+    aspect-ratio:960/1280;
+    object-fit:cover;
+  }
+
+  .bio-card{
+    background:var(--branco);
+    border-radius:var(--radius);
+    padding:30px;
+    box-shadow:var(--sombra);
+  }
+  .bio-card p{color:var(--texto-sec);}
+  .bio-card p:last-of-type{margin-bottom:0;}
+  .bio-legal{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--borda);
+    font-size:.88rem;
+    color:var(--verde-escuro);
+    font-weight:500;
+  }
+
+  .competencias{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:26px;
+  }
+  @media(min-width:560px){
+    .competencias{grid-template-columns:repeat(4,1fr);}
+  }
+  .competencia-item{
+    background:var(--branco);
+    border-radius:14px;
+    padding:20px 14px;
+    text-align:center;
+    box-shadow:var(--sombra);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .competencia-item:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(22,58,34,.14);}
+  .competencia-item svg{width:26px;height:26px;stroke:var(--verde);margin-bottom:10px;}
+  .competencia-item span{display:block;font-size:.82rem;font-weight:600;color:var(--verde-escuro);}
+
+  /* ---------- DMAE ---------- */
+  .dmae-block{
+    margin-top:44px;
+    background:var(--verde);
+    border-radius:20px;
+    padding:34px 28px;
+    color:var(--branco);
+  }
+  .dmae-block h3{color:var(--branco);font-size:1.15rem;max-width:520px;}
+  .dmae-block > p{color:rgba(255,255,255,.75);max-width:560px;font-size:.94rem;}
+  .dmae-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:16px;
+    margin:26px 0 8px;
+  }
+  .dmae-stat{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:14px;
+    padding:20px;
+    text-align:center;
+  }
+  .dmae-stat .num{
+    font-family:var(--font-titulo);
+    font-size:2.1rem;
+    font-weight:700;
+    color:var(--terracota-claro);
+    display:block;
+  }
+  .dmae-stat .lbl{font-size:.82rem;color:rgba(255,255,255,.8);margin-top:4px;display:block;}
+  .dmae-stat .pendente-tag{margin-top:8px;}
+  .dmae-fotos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+    gap:12px;
+    margin-top:22px;
+  }
+  .dmae-foto{
+    aspect-ratio:1/1;
+    border:2px dashed rgba(255,255,255,.5);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.72rem;
+    text-align:center;
+    color:rgba(255,255,255,.75);
+    padding:8px;
+    background:rgba(255,255,255,.05);
+  }
+
+  /* ---------- Segmentos ---------- */
+  .tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+  }
+  .tab-btn{
+    font-family:var(--font-corpo);
+    font-weight:600;
+    font-size:.88rem;
+    background:var(--branco);
+    border:1px solid var(--borda);
+    color:var(--texto-sec);
+    padding:10px 18px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .tab-btn:hover{border-color:var(--verde);}
+  .tab-btn.is-active{
+    background:var(--verde);
+    border-color:var(--verde);
+    color:var(--branco);
+  }
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+  }
+  .card{
+    background:var(--branco);
+    border-radius:var(--radius);
+    padding:26px;
+    box-shadow:var(--sombra);
+    transition:opacity .2s ease, transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(22,58,34,.16);}
+  .card-icon{
+    width:48px;height:48px;
+    border-radius:12px;
+    background:var(--terracota-claro);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .card-icon svg{width:24px;height:24px;stroke:var(--terracota);}
+  .card h3{font-size:1.02rem;margin-bottom:8px;}
+  .card p{color:var(--texto-sec);font-size:.9rem;margin:0;}
+  .card.is-hidden{display:none;}
+
+  /* ---------- Propostas ---------- */
+  .propostas-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  @media(min-width:900px){
+    .propostas-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .proposta{
+    background:var(--branco);
+    border-radius:20px;
+    padding:30px 26px;
+    box-shadow:var(--sombra);
+    border:1px solid var(--borda);
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .proposta:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(22,58,34,.16);}
+  .proposta.destaque:hover{transform:translateY(-12px);}
+  .proposta.destaque{
+    border:2px solid var(--terracota);
+    transform:translateY(-6px);
+    position:relative;
+  }
+  .selo-destaque{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--terracota);
+    color:var(--branco);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .proposta h3{font-size:1.15rem;margin-bottom:4px;}
+  .proposta .prop-preco{color:var(--texto-sec);font-size:.86rem;margin-bottom:18px;}
+  .proposta ul{
+    list-style:none;
+    margin:0 0 22px;
+    padding:0;
+    flex-grow:1;
+  }
+  .proposta li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:.9rem;
+    color:var(--texto-sec);
+    margin-bottom:12px;
+  }
+  .proposta li svg{width:17px;height:17px;stroke:var(--verde);flex-shrink:0;margin-top:2px;}
+  .prop-pendente-nota{
+    font-size:.76rem;
+    color:var(--terracota);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  /* ---------- Prova social ---------- */
+  .depoimentos-grid, .cases-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+  }
+  .cases-grid{margin-top:36px;}
+  .depoimento-vazio, .case-vazio{
+    border:2px dashed var(--terracota);
+    border-radius:var(--radius);
+    padding:28px 22px;
+    text-align:center;
+    color:var(--texto-sec);
+    font-size:.9rem;
+    background:rgba(246,228,216,.35);
+  }
+  .depoimento-vazio svg, .case-vazio svg{width:26px;height:26px;stroke:var(--terracota);margin-bottom:10px;}
+
+  /* ---------- Contato ---------- */
+  .contato{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(900px 500px at 90% 0%, rgba(180,98,46,.16), transparent 55%),
+      var(--verde-escuro);
+    color:var(--branco);
+  }
+  .contato .section-tag{background:rgba(246,228,216,.16);color:#F6C9A6;}
+  .contato-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+  @media(min-width:900px){
+    .contato-grid{grid-template-columns:1fr 1.1fr;}
+  }
+  .contato-info h2{color:var(--branco);}
+  .contato-info > p{color:rgba(255,255,255,.72);}
+  .contato-lista{list-style:none;margin:26px 0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .contato-lista li{display:flex;align-items:center;gap:14px;}
+  .contato-lista svg{width:20px;height:20px;stroke:var(--terracota-claro);flex-shrink:0;}
+  .contato-lista a{text-decoration:none;font-weight:600;color:var(--branco);}
+  .contato-deadline{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:999px;
+    padding:10px 18px;
+    font-size:.86rem;
+    font-weight:600;
+    margin-bottom:26px;
+  }
+  .qr-box{
+    display:inline-flex;
+    align-items:center;
+    gap:16px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:16px;
+    padding:16px 20px;
+    margin-top:8px;
+  }
+  .qr-box img{width:96px;height:96px;border-radius:8px;background:#fff;padding:4px;}
+  .qr-box p{margin:0;font-size:.82rem;color:rgba(255,255,255,.75);max-width:180px;}
+
+  .form-card{
+    background:var(--branco);
+    color:var(--texto);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:var(--sombra);
+  }
+  .form-row{margin-bottom:16px;}
+  .form-row label{
+    display:block;
+    font-size:.84rem;
+    font-weight:600;
+    margin-bottom:6px;
+    color:var(--verde-escuro);
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea{
+    width:100%;
+    font-family:var(--font-corpo);
+    font-size:.95rem;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1.5px solid var(--borda);
+    background:var(--areia);
+    color:var(--texto);
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus{
+    outline:none;
+    border-color:var(--verde);
+  }
+  .form-two{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:520px){.form-two{grid-template-columns:1fr 1fr;}}
+  .form-nota{font-size:.78rem;color:var(--texto-sec);margin-top:12px;text-align:center;}
+  .form-status{
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:10px;
+    font-size:.88rem;
+    font-weight:600;
+    display:none;
+  }
+  .form-status.show{display:block;}
+  .form-status.ok{background:var(--terracota-claro);color:var(--verde-escuro);}
+  .form-status.info{background:#eee;color:var(--texto-sec);}
+
+  /* ---------- Animações de rolagem ---------- */
+  [data-animate]{
+    transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  }
+  [data-animate].pre-animate{opacity:0;transform:translateY(24px);}
+  [data-animate].in-view{opacity:1;transform:translateY(0);}
+  .risco-card:nth-child(2){transition-delay:.08s;}
+  .risco-card:nth-child(3){transition-delay:.16s;}
+  .passo:nth-child(2){transition-delay:.06s;}
+  .passo:nth-child(3){transition-delay:.12s;}
+  .passo:nth-child(4){transition-delay:.18s;}
+  #segmentos-grid .card:nth-child(2){transition-delay:.06s;}
+  #segmentos-grid .card:nth-child(3){transition-delay:.12s;}
+  #segmentos-grid .card:nth-child(4){transition-delay:.18s;}
+  .propostas-grid .proposta:nth-child(2){transition-delay:.08s;}
+  .propostas-grid .proposta:nth-child(3){transition-delay:.16s;}
+  @media(prefers-reduced-motion:reduce){
+    [data-animate]{transition:none !important;}
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--verde-escuro);
+    border-top:1px solid rgba(255,255,255,.12);
+    padding:26px 0;
+    text-align:center;
+  }
+  footer p{
+    margin:0;
+    color:rgba(255,255,255,.6);
+    font-size:.82rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- Sprite de ícones reutilizados -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+    <symbol id="ic-alert" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="ic-doc" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></symbol>
+    <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+    <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="ic-utensils" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1 1 2 2 2s2-1 2-2V2"/><path d="M5 11v11"/><path d="M15 2a4 4 0 0 0-4 4v5h4v11"/><path d="M15 2v20"/></symbol>
+    <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+    <symbol id="ic-factory" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21V10l6 4v-4l6 4V4l7 5v12H2Z"/><path d="M6 17h.01M11 17h.01M16 17h.01"/></symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="ic-whatsapp" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3 0-.1-.2-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Z" fill="none" stroke-width="1.6"/></symbol>
+    <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+    <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===================== NAVEGAÇÃO ===================== -->
+<nav class="site-nav" id="site-nav">
+  <div class="container nav-inner">
+    <a href="#topo" class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-shield"/></svg>
+      Thiago Mattos <span class="nav-logo-sec">Biólogo</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#segmentos">Segmentos</a></li>
+      <li><a href="#propostas">Propostas</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#" class="btn btn-primary nav-cta js-whatsapp-link" target="_blank" rel="noopener">Agendar diagnóstico</a>
+  </div>
+</nav>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="#" class="whatsapp-float js-whatsapp-link" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><use href="#ic-whatsapp"/></svg>
+</a>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="topo">
+  <div class="container hero-grid">
+    <div class="hero-content" data-animate>
+      <span class="hero-eyebrow">Biólogo CRBio-04 · Uberlândia-MG</span>
+      <h1>Seu negócio já tem PGRS? Mais do que uma exigência da Prefeitura de Uberlândia, é a base da sua gestão ambiental.</h1>
+      <p class="subtitle">PGRS é o Plano de Gerenciamento de Resíduos Sólidos exigido pela Prefeitura para grandes geradores: negócios com mais de 200 litros de resíduos por dia, condomínios não residenciais ou mistos com 1.000 litros ou mais, e eventos com 1.000 litros ou mais. Se o seu caso se encaixa em algum desses, o documento já é obrigatório, e, bem feito, vira ferramenta de sustentabilidade, desenvolvimento social e economia para o seu negócio.</p>
+
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary btn-lg js-whatsapp-link" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24"><use href="#ic-whatsapp"/></svg>
+          Agendar diagnóstico
+        </a>
+        <div class="hero-secondary-nav">
+          <a href="#sobre" class="btn btn-outline">Sobre Thiago Mattos</a>
+          <a href="#como-funciona" class="btn btn-outline">Como funciona</a>
+        </div>
+      </div>
+
+      <div class="hero-deadline">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-clock"/></svg>
+        PGRS ágil e eficaz, sem abrir mão da qualidade técnica
+      </div>
+
+      <div class="badges-row">
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-shield"/></svg> CRBio-04</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-shield"/></svg> ABNT NBR 10004:2024</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-shield"/></svg> IN IBAMA 12/2021</span>
+      </div>
+    </div>
+
+    <div class="hero-media" data-animate>
+      <div class="hero-media-card">
+        <img src="Foto%20Visita%20atualiazada.jpeg" alt="Thiago Mattos durante visita técnica a uma cooperativa de reciclagem" loading="lazy">
+      </div>
+      <div class="hero-floating-badge">
+        <span class="num">+20</span>
+        <span class="lbl">empresas e condomínios atendidos neste mês</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== NÚMEROS ===================== -->
+<section class="stats-strip" data-animate>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">+20</span>
+        <span class="stat-lbl">empresas e condomínios atendidos neste mês</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">Metodologia Ágil</span>
+        <span class="stat-lbl">do diagnóstico à entrega do PGRS</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5 anos</span>
+        <span class="stat-lbl">no setor de resíduos sólidos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RISCO ===================== -->
+<section class="risco">
+  <div class="container">
+    <div class="section-heading" data-animate>
+      <span class="section-tag">Atenção</span>
+      <h2>O risco de não ter o PGRS</h2>
+      <p>Não é só burocracia: a ausência do documento tem consequência direta no funcionamento do seu negócio.</p>
+    </div>
+    <div class="risco-grid">
+      <div class="risco-card" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-alert"/></svg>
+        <h3>Multa por infração</h3>
+        <p>De R$ 799,03 a R$ 2.397,10 por infração, em dobro em caso de reincidência em até 6 meses.</p>
+      </div>
+      <div class="risco-card" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-doc"/></svg>
+        <h3>Risco ao Alvará</h3>
+        <p>A irregularidade no PGRS pode comprometer a renovação do Alvará de Funcionamento do estabelecimento.</p>
+      </div>
+      <div class="risco-card" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-shield"/></svg>
+        <h3>Mais fiscalização</h3>
+        <p>A Lei 14.504/2025 prevê fiscalização por videomonitoramento, tornando a autuação mais provável.</p>
+      </div>
+    </div>
+    <div class="risco-urgencia">
+      Quanto mais cedo você regulariza, menor o risco de autuação, a fiscalização por videomonitoramento prevista na Lei 14.504/2025 já é uma realidade em Uberlândia.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section id="como-funciona">
+  <div class="container">
+    <div class="section-heading" data-animate>
+      <span class="section-tag">Processo</span>
+      <h2>Como funciona</h2>
+      <p>Um processo simples, pensado para não tomar tempo do seu negócio.</p>
+    </div>
+    <div class="passos">
+      <div class="passo" data-animate>
+        <span class="passo-num">01</span>
+        <div class="passo-body">
+          <h3>Contato e agendamento</h3>
+          <p>Você fala comigo pelo WhatsApp, telefone ou formulário e agendamos a visita técnica.</p>
+        </div>
+      </div>
+      <div class="passo" data-animate>
+        <span class="passo-num">02</span>
+        <div class="passo-body">
+          <h3>Visita técnica única</h3>
+          <p>Vou até o seu local e levanto todos os dados necessários em uma única visita, sem retrabalho.</p>
+        </div>
+      </div>
+      <div class="passo" data-animate>
+        <span class="passo-num">03</span>
+        <div class="passo-body">
+          <h3>Geração dos documentos</h3>
+          <p>Elaboro o Relatório de Diagnóstico e o PGRS oficial, de acordo com a legislação aplicável ao seu segmento.</p>
+        </div>
+      </div>
+      <div class="passo" data-animate>
+        <span class="passo-num">04</span>
+        <div class="passo-body">
+          <h3>Entrega ágil dos documentos</h3>
+          <p>Você recebe o Relatório de Diagnóstico e o PGRS prontos, com agilidade e qualidade técnica, após a visita.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre" style="background:var(--branco);">
+  <div class="container">
+    <div class="section-heading" data-animate>
+      <span class="section-tag">Quem faz</span>
+      <h2>Sobre Thiago Mattos</h2>
+    </div>
+
+    <div class="sobre-grid">
+      <div class="foto-card" data-animate>
+        <img src="Foto%20profissional.jpeg" alt="Thiago Mattos ministrando palestra de educação ambiental" loading="lazy">
+      </div>
+
+      <div class="bio-card" data-animate>
+        <p>Sou Thiago Mattos, biólogo com registro no CRBio-04 (nº <strong class="js-crbio">[a inserir]</strong>), e atuo de forma independente na elaboração de PGRS para grandes geradores em Uberlândia-MG.</p>
+        <p>Na prática, faço o levantamento técnico em uma visita ao local, classifico os resíduos conforme a ABNT NBR 10004 e elaboro o Relatório de Diagnóstico e o PGRS de acordo com a legislação municipal e federal aplicável ao seu segmento.</p>
+        <p>Meu jeito de trabalhar é direto: sem jargão desnecessário e sem enrolação, explico a obrigação legal antes de vender o serviço, e entrego só o que a legislação exige.</p>
+        <div class="bio-legal">
+          Biólogos são habilitados pela Instrução Normativa IBAMA 12/2021 a assumir a responsabilidade técnica pela elaboração de PGRS. Já participei da elaboração de PGRS para mais de dez empresas de Uberlândia, entre restaurantes, condomínios e indústrias.
+        </div>
+      </div>
+    </div>
+
+    <div class="competencias">
+      <div class="competencia-item" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-doc"/></svg>
+        <span>Elaboração de PGRS</span>
+      </div>
+      <div class="competencia-item" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-search"/></svg>
+        <span>Diagnóstico de Resíduos</span>
+      </div>
+      <div class="competencia-item" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-layers"/></svg>
+        <span>Classificação ABNT NBR 10004</span>
+      </div>
+      <div class="competencia-item" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-users"/></svg>
+        <span>Educação Ambiental</span>
+      </div>
+    </div>
+
+    <!-- PENDENTE: números exatos do período no DMAE e fotos selecionadas -->
+    <div class="dmae-block" data-animate>
+      <span class="pendente-tag">Pendente</span>
+      <h3>5 anos de experiência no setor de resíduos sólidos</h3>
+      <p>Cinco anos de atuação no setor de resíduos sólidos, incluindo estágio no DMAE, o próprio órgão municipal que recebe e fiscaliza o PGRS dos grandes geradores de Uberlândia.</p>
+      <div class="dmae-stats">
+        <div class="dmae-stat">
+          <span class="num">[X]</span>
+          <span class="lbl">treinamentos conduzidos</span>
+          <span class="pendente-tag">a definir</span>
+        </div>
+        <div class="dmae-stat">
+          <span class="num">[Y]</span>
+          <span class="lbl">palestras</span>
+          <span class="pendente-tag">a definir</span>
+        </div>
+        <div class="dmae-stat">
+          <span class="num">[Z]</span>
+          <span class="lbl">ações de educação ambiental</span>
+          <span class="pendente-tag">a definir</span>
+        </div>
+      </div>
+      <div class="dmae-fotos">
+        <div class="dmae-foto">Foto do DMAE a inserir</div>
+        <div class="dmae-foto">Foto do DMAE a inserir</div>
+        <div class="dmae-foto">Foto do DMAE a inserir</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SEGMENTOS ===================== -->
+<section id="segmentos">
+  <div class="container">
+    <div class="section-heading" data-animate>
+      <span class="section-tag">Para quem</span>
+      <h2>Segmentos atendidos</h2>
+      <p>Se o seu negócio se encaixa em um desses perfis, o PGRS provavelmente é obrigatório.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Filtrar segmentos">
+      <button class="tab-btn is-active" data-filter="todos">Todos</button>
+      <button class="tab-btn" data-filter="restaurantes">Restaurantes</button>
+      <button class="tab-btn" data-filter="condominios">Condomínios</button>
+      <button class="tab-btn" data-filter="industrias">Indústrias</button>
+      <button class="tab-btn" data-filter="eventos">Eventos</button>
+    </div>
+
+    <div class="cards-grid" id="segmentos-grid">
+      <div class="card" data-segment="restaurantes" data-animate>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-utensils"/></svg></div>
+        <h3>Restaurantes e food service</h3>
+        <p>Cozinhas geram óleo usado, orgânicos e embalagens em volume, se o total ultrapassa 200 litros/dia, o PGRS é obrigatório.</p>
+      </div>
+      <div class="card" data-segment="condominios" data-animate>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-building"/></svg></div>
+        <h3>Condomínios não residenciais e mistos</h3>
+        <p>Condomínios comerciais ou de uso misto com 1.000 litros ou mais de resíduos por dia entram na mesma exigência de grandes geradores.</p>
+      </div>
+      <div class="card" data-segment="industrias" data-animate>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-factory"/></svg></div>
+        <h3>Indústrias e comércios de médio a grande porte</h3>
+        <p>Mais volume de produção significa mais responsabilidade sobre o destino dos resíduos, e mais exposição numa fiscalização.</p>
+      </div>
+      <div class="card" data-segment="eventos" data-animate>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-calendar"/></svg></div>
+        <h3>Geradores de eventos</h3>
+        <p>Eventos com 1.000 litros ou mais de resíduos também precisam apresentar um PGRS específico à Prefeitura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROPOSTAS ===================== -->
+<section id="propostas" style="background:var(--branco);">
+  <div class="container">
+    <div class="section-heading" data-animate>
+      <span class="section-tag">Investimento</span>
+      <h2>Propostas</h2>
+      <p>Valor sob consulta, definido após a visita técnica de diagnóstico. Estrutura abaixo em validação.</p>
+    </div>
+
+    <!-- PENDENTE: itens finais das 3 propostas (ver brief seção 3.6). Conteúdo abaixo é ponto de partida, a confirmar. -->
+    <div class="propostas-grid">
+      <div class="proposta" data-animate>
+        <span class="pendente-tag">Preliminar</span>
+        <h3>Entrada</h3>
+        <p class="prop-preco">Valor sob consulta</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Visita técnica de diagnóstico</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Elaboração do PGRS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Sem apoio na reunião de documentação</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-block js-whatsapp-link" target="_blank" rel="noopener">Agendar diagnóstico</a>
+      </div>
+
+      <div class="proposta destaque" data-animate>
+        <span class="selo-destaque">Mais escolhida</span>
+        <span class="pendente-tag">Preliminar</span>
+        <h3>Completa</h3>
+        <p class="prop-preco">Valor sob consulta</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Visita técnica de diagnóstico</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Elaboração integral do PGRS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Plano de ação e metas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> ART</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Apoio na reunião de documentação</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-block js-whatsapp-link" target="_blank" rel="noopener">Agendar diagnóstico</a>
+      </div>
+
+      <div class="proposta" data-animate>
+        <span class="pendente-tag">Preliminar</span>
+        <h3>Superior</h3>
+        <p class="prop-preco">Valor sob consulta</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Tudo da proposta Completa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Monitoramento no primeiro ano</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-check"/></svg> Conformidade documental do primeiro ano</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-block js-whatsapp-link" target="_blank" rel="noopener">Agendar diagnóstico</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROVA SOCIAL ===================== -->
+<section id="prova-social">
+  <div class="container">
+    <div class="section-heading" data-animate>
+      <span class="section-tag">Prova social</span>
+      <h2>O que dizem, e cases reais</h2>
+    </div>
+
+    <!-- PENDENTE: depoimentos de clientes -->
+    <div class="depoimentos-grid">
+      <div class="depoimento-vazio" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-users"/></svg>
+        <span class="pendente-tag">Em breve</span>
+        <p>Espaço reservado para depoimentos de clientes atendidos.</p>
+      </div>
+      <div class="depoimento-vazio" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-users"/></svg>
+        <span class="pendente-tag">Em breve</span>
+        <p>Espaço reservado para depoimentos de clientes atendidos.</p>
+      </div>
+    </div>
+
+    <!-- PENDENTE: 1 a 2 cases reais, redigidos sem qualquer referência à empresa contratante anterior -->
+    <div class="cases-grid">
+      <div class="case-vazio" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-doc"/></svg>
+        <span class="pendente-tag">Pendente</span>
+        <p>Case real a ser redigido (título, descrição curta, resultado).</p>
+      </div>
+      <div class="case-vazio" data-animate>
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-doc"/></svg>
+        <span class="pendente-tag">Pendente</span>
+        <p>Case real a ser redigido (título, descrição curta, resultado).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO ===================== -->
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="contato-grid">
+      <div class="contato-info" data-animate>
+        <span class="section-tag">Contato</span>
+        <h2>Vamos agendar seu diagnóstico?</h2>
+        <p>Fale comigo pelo canal que preferir. Retorno rápido, sem enrolação.</p>
+
+        <div class="contato-deadline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-clock"/></svg>
+          PGRS ágil e eficaz, sem abrir mão da qualidade técnica
+        </div>
+
+        <ul class="contato-lista">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-phone"/></svg>
+            <a href="#" class="js-whatsapp-link" target="_blank" rel="noopener"><span class="js-whatsapp-display">(34) 00000-0000</span></a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-mail"/></svg>
+            <a href="#" class="js-email-link"><span class="js-email-display">contato@seudominio.com.br</span></a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-pin"/></svg>
+            <span>Uberlândia-MG</span>
+          </li>
+        </ul>
+
+        <a href="#" class="btn btn-primary js-whatsapp-link" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24"><use href="#ic-whatsapp"/></svg>
+          Agendar diagnóstico
+        </a>
+
+        <div class="qr-box">
+          <img class="js-qr-img" src="" alt="QR code para abrir conversa no WhatsApp">
+          <p>Aponte a câmera do celular para abrir a conversa no WhatsApp direto.</p>
+        </div>
+      </div>
+
+      <form class="form-card" id="lead-form" data-animate>
+        <div class="form-row">
+          <label for="f-nome">Nome</label>
+          <input type="text" id="f-nome" name="nome" required autocomplete="name">
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label for="f-empresa">Empresa</label>
+            <input type="text" id="f-empresa" name="empresa" required autocomplete="organization">
+          </div>
+          <div class="form-row">
+            <label for="f-segmento">Segmento</label>
+            <select id="f-segmento" name="segmento" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Condomínio">Condomínio</option>
+              <option value="Indústria">Indústria</option>
+              <option value="Evento">Evento</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="f-telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="f-telefone" name="telefone" required autocomplete="tel" placeholder="(34) 90000-0000">
+        </div>
+        <div class="form-row">
+          <label for="f-obs">Observações (opcional)</label>
+          <textarea id="f-obs" name="observacoes" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Solicitar diagnóstico</button>
+        <div class="form-status" id="form-status"></div>
+        <p class="form-nota">Seus dados são usados só para retorno sobre o diagnóstico solicitado.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Thiago Mattos &middot; Biólogo &middot; CRBio-04 nº <span class="js-crbio">[a inserir]</span> &middot; Uberlândia-MG &middot; <span class="js-ano"></span></p>
+  </div>
+</footer>
+
+<!-- iframe oculto usado pelo envio do formulário (Google Apps Script) -->
+<iframe name="hidden-form-target" style="display:none" title="envio-formulario"></iframe>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ==========================================================
+     CONFIGURAÇÃO — edite só aqui para atualizar o site inteiro
+     ========================================================== */
+  var CONFIG = {
+    // TODO: substituir pelo número real, só dígitos, com DDI 55 + DDD + número
+    whatsappNumber: "5534996360827",
+    whatsappMessage: "Olá, vim pela página e gostaria de agendar um diagnóstico de PGRS",
+    // TODO: substituir pelo e-mail real de contato
+    email: "thiagomattos634@gmail.com",
+    // TODO: substituir pelo número de registro no CRBio-04
+    crbio: "[a inserir]",
+    // TODO: preencher com a URL do Google Apps Script após publicar (ver apps-script-formulario.gs)
+    appsScriptUrl: ""
+  };
+
+  var isPlaceholderPhone = CONFIG.whatsappNumber.indexOf("X") !== -1;
+  var whatsappLink = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(CONFIG.whatsappMessage);
+
+  function formatPhoneDisplay(digits){
+    var local = digits.replace(/^55/, "");
+    if (local.length === 11) {
+      return "(" + local.slice(0,2) + ") " + local.slice(2,7) + "-" + local.slice(7);
+    }
+    if (local.length === 10) {
+      return "(" + local.slice(0,2) + ") " + local.slice(2,6) + "-" + local.slice(6);
+    }
+    return digits;
+  }
+
+  document.querySelectorAll(".js-whatsapp-link").forEach(function(el){
+    el.setAttribute("href", whatsappLink);
+  });
+  document.querySelectorAll(".js-whatsapp-display").forEach(function(el){
+    el.textContent = isPlaceholderPhone ? "WhatsApp (número a definir)" : formatPhoneDisplay(CONFIG.whatsappNumber);
+  });
+  document.querySelectorAll(".js-email-link").forEach(function(el){
+    el.setAttribute("href", "mailto:" + CONFIG.email);
+  });
+  document.querySelectorAll(".js-email-display").forEach(function(el){
+    el.textContent = CONFIG.email;
+  });
+  document.querySelectorAll(".js-crbio").forEach(function(el){
+    el.textContent = CONFIG.crbio;
+  });
+  document.querySelectorAll(".js-ano").forEach(function(el){
+    el.textContent = new Date().getFullYear();
+  });
+
+  // QR code do link do WhatsApp (gerado via serviço público goqr.me, sem dado sensível: só o link público de WhatsApp)
+  var qrImg = document.querySelector(".js-qr-img");
+  if (qrImg) {
+    qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=6&data=" + encodeURIComponent(whatsappLink);
+  }
+
+  /* ---------- Filtro de segmentos ---------- */
+  var tabs = document.querySelectorAll(".tab-btn");
+  var cards = document.querySelectorAll("#segmentos-grid .card");
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      tabs.forEach(function(t){ t.classList.remove("is-active"); });
+      tab.classList.add("is-active");
+      var filter = tab.getAttribute("data-filter");
+      cards.forEach(function(card){
+        var show = filter === "todos" || card.getAttribute("data-segment") === filter;
+        card.classList.toggle("is-hidden", !show);
+      });
+    });
+  });
+
+  /* ---------- Formulário de contato (Google Apps Script + iframe oculto) ---------- */
+  var form = document.getElementById("lead-form");
+  var status = document.getElementById("form-status");
+
+  function showStatus(text, kind){
+    status.textContent = text;
+    status.className = "form-status show " + kind;
+  }
+
+  if (form) {
+    if (CONFIG.appsScriptUrl) {
+      form.setAttribute("action", CONFIG.appsScriptUrl);
+      form.setAttribute("method", "POST");
+      form.setAttribute("target", "hidden-form-target");
+
+      var iframe = document.querySelector('iframe[name="hidden-form-target"]');
+      var submitted = false;
+      iframe.addEventListener("load", function(){
+        if (submitted) {
+          showStatus("Recebido! Vou entrar em contato em breve.", "ok");
+          form.reset();
+          submitted = false;
+        }
+      });
+      form.addEventListener("submit", function(){
+        submitted = true;
+      });
+    } else {
+      // Ainda sem backend configurado: evita perder o lead, orienta pelo WhatsApp
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        showStatus("Formulário em configuração no momento. Fale comigo direto pelo WhatsApp usando o botão acima, respondo rápido!", "info");
+      });
+    }
+  }
+
+  /* ---------- Nav com sombra ao rolar ---------- */
+  var siteNav = document.getElementById("site-nav");
+  if (siteNav) {
+    var toggleNavShadow = function(){
+      siteNav.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+    toggleNavShadow();
+    window.addEventListener("scroll", toggleNavShadow, {passive:true});
+  }
+
+  /* ---------- Animações ao rolar a página ---------- */
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    var animatedEls = document.querySelectorAll("[data-animate]");
+    animatedEls.forEach(function(el){ el.classList.add("pre-animate"); });
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:"0px 0px -40px 0px"});
+    animatedEls.forEach(function(el){ revealObserver.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>
